@@ -95,22 +95,32 @@
     </div>
   </section>
 
-  <section class="relative px-6 md:px-10 py-16 md:py-24">
+  <section class="relative px-6 md:px-10 py-12">
     <div class="max-w-7xl mx-auto">
 
-      <div class="flex items-baseline justify-between mb-12">
-        <h2 class="display text-3xl md:text-4xl">First entries.</h2>
-        <span class="text-warm-500 text-[11px] uppercase tracking-[0.3em]">coming soon</span>
+      <div class="flex items-baseline justify-between mb-12 mt-8">
+        <h2 class="display text-3xl md:text-4xl">Available.</h2>
+        <span class="text-warm-500 text-[11px] uppercase tracking-[0.3em]">01 outline</span>
       </div>
 
-      <div class="border-t border-warm-300 py-24 md:py-32 px-6 md:px-10 text-center bg-warm-200/50">
-        <p class="display-italic text-warm-700 text-2xl md:text-4xl max-w-2xl mx-auto leading-snug empty-line">
-          The first outlines are being drafted.
-        </p>
-        <p class="mt-6 max-w-xl mx-auto text-warm-600 leading-relaxed empty-sub">
-          Check back soon.
-        </p>
-      </div>
+      <ul class="border-t border-warm-300">
+        <li class="border-b border-warm-300 transition-colors duration-500 hover:bg-warm-200/50">
+          <a href="making-a-false-report/base.html" class="grid grid-cols-12 gap-4 items-baseline py-8 md:py-10 px-2 md:px-6 group/row">
+            <span class="col-span-1 tabular-nums text-warm-400 text-xs">01</span>
+            <span class="col-span-11 md:col-span-7 display text-3xl md:text-5xl">Making a False Report</span>
+            <span class="hidden md:inline col-span-2 text-xs uppercase tracking-[0.25em] text-warm-500">Crim. Code 22a</span>
+            <span class="hidden md:flex col-span-2 justify-end items-center gap-3 text-sm text-warm-800">
+              Open
+              <span class="inline-block transition-transform duration-500 group-hover/row:translate-x-2 opacity-0 group-hover/row:opacity-100">&rarr;</span>
+            </span>
+            <span class="col-span-12 md:hidden mt-2 text-xs uppercase tracking-[0.25em] text-warm-500">Crim. Code 22a</span>
+          </a>
+        </li>
+      </ul>
+
+      <p class="mt-12 max-w-xl text-warm-500 text-sm leading-relaxed">
+        More entries coming. Each outline pulls together statute, general rule, and the line of cases from acquittal to conviction.
+      </p>
 
       <div class="mt-24 mb-8 text-center">
         <a href="../" class="inline-flex items-center gap-3 text-sm text-warm-500 link-u">
@@ -140,8 +150,7 @@
   tl.from(".page-eyebrow", { opacity: 0, y: 12, duration: 0.8 })
     .from(".page-title",   { opacity: 0, y: 36, duration: 1.2 }, "-=0.5")
     .from(".page-sub",     { opacity: 0, y: 18, duration: 1.0 }, "-=0.7")
-    .from(".empty-line",   { opacity: 0, y: 14, duration: 1.0 }, "-=0.5")
-    .from(".empty-sub",    { opacity: 0, y: 10, duration: 0.8 }, "-=0.6");
+    .from("ul li",         { opacity: 0, y: 20, duration: 0.7, stagger: 0.04 }, "-=0.4");
 </script>
 
 </body>
