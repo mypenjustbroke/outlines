@@ -5,11 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Library — Mypenjustbroke Outlines</title>
 <meta name="description" content="The library of legal outlines by mypenjustbroke.">
-<meta name="color-scheme" content="dark">
+<meta name="color-scheme" content="light">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Crimson+Pro:ital,wght@1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet">
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -17,16 +19,17 @@
     theme: {
       extend: {
         fontFamily: {
-          sans: ['Geist', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto'],
-          serif: ['Fraunces', 'ui-serif', 'Georgia'],
+          sans: ['Satoshi', 'ui-sans-serif', 'system-ui'],
+          body: ['Geist', 'ui-sans-serif', 'system-ui'],
+          serif: ['"Crimson Pro"', 'Georgia', 'serif'],
         },
         colors: {
-          ink: {
-            900: '#0a0a0b', 800: '#111114', 700: '#1c1c20', 600: '#26262a',
-            500: '#3a3a40', 400: '#5a5a62', 300: '#9b9ba2', 200: '#c9c9cf',
-            100: '#e8e6e3', 50:  '#f5f3ef',
+          warm: {
+            50:'#FAF5EC',100:'#F1E7D3',200:'#E8DBC0',300:'#D4C09F',
+            400:'#A89178',500:'#86553A',600:'#5A4332',700:'#3D2817',
+            800:'#2A1810',900:'#1A1006',
           },
-          accent: '#c9a875',
+          clay:'#B8704A', ochre:'#C9824D', amber:'#8B5A2B',
         },
       },
     },
@@ -36,168 +39,156 @@
 <style>
   html { scroll-behavior: smooth; }
   body {
-    background: #0a0a0b;
+    background: #F1E7D3;
     font-family: 'Geist', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    color: #5A4332;
+    -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
   }
   .display {
-    font-family: 'Fraunces', Georgia, serif;
-    font-variation-settings: "opsz" 144;
-    letter-spacing: -0.025em;
-    line-height: 0.96;
-    font-weight: 400;
+    font-family: 'Satoshi', ui-sans-serif, system-ui;
+    font-weight: 700; letter-spacing: -0.025em; line-height: 0.96; color: #2A1810;
+  }
+  .display-italic {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-style: italic; font-weight: 300; letter-spacing: -0.01em;
   }
   .grain::before {
-    content: '';
-    position: fixed; inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 1000;
-    mix-blend-mode: overlay;
-    opacity: 0.6;
-  }
-  .radial-wash {
-    background:
-      radial-gradient(60% 50% at 50% 0%, rgba(201, 168, 117, 0.10) 0%, transparent 65%),
-      radial-gradient(80% 60% at 50% 100%, rgba(255, 255, 255, 0.025) 0%, transparent 70%);
+    content: ''; position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.16 0 0 0 0 0.09 0 0 0 0 0.06 0 0 0 0.07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 1000; mix-blend-mode: multiply; opacity: 0.7;
   }
   .link-u { position: relative; }
   .link-u::after {
     content: ''; position: absolute; left: 0; right: 0; bottom: -3px; height: 1px;
     background: currentColor; transform: scaleX(0); transform-origin: right center;
-    transition: transform 0.5s cubic-bezier(0.7, 0, 0.3, 1);
+    transition: transform 0.55s cubic-bezier(0.7, 0, 0.3, 1);
   }
   .link-u:hover::after { transform: scaleX(1); transform-origin: left center; }
   .row-arrow { display: inline-block; transition: transform 0.5s cubic-bezier(0.7, 0, 0.3, 1); opacity: 0; }
   .row:hover .row-arrow { transform: translateX(0.5rem); opacity: 1; }
-  .row { transition: background 0.5s ease, padding 0.5s ease; }
-  .row:hover { background: rgba(255,255,255,0.02); }
-  ::selection { background: #c9a875; color: #0a0a0b; }
+  .row { transition: background 0.5s ease; }
+  .row:hover { background: rgba(58, 37, 23, 0.04); }
+  ::selection { background: #B8704A; color: #F1E7D3; }
 </style>
 </head>
-<body class="text-ink-100 grain">
+<body class="grain">
 
 <main class="overflow-x-hidden w-full max-w-full">
 
-  <!-- NAV -->
-  <nav class="fixed top-0 left-0 right-0 z-50 px-6 md:px-10 py-6 mix-blend-difference">
+  <nav class="fixed top-0 left-0 right-0 z-50 px-6 md:px-10 py-6">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <a href="../" class="flex items-baseline gap-3">
         <span class="display text-xl tracking-tight">Mypenjustbroke</span>
-        <span class="text-ink-300 text-[10px] uppercase tracking-[0.28em]">Outlines</span>
+        <span class="text-warm-500 text-[10px] uppercase tracking-[0.28em]">Outlines</span>
       </a>
-      <div class="hidden md:flex items-center gap-10 text-sm">
+      <div class="hidden md:flex items-center gap-10 text-sm text-warm-700">
         <a href="../" class="link-u">Home</a>
         <a href="./" class="link-u">Library</a>
-        <a href="https://mypenjustbroke.com" class="link-u">mypenjustbroke.com</a>
+        <a href="../simdem-law/" class="link-u">SimDem Law</a>
       </div>
     </div>
   </nav>
 
-  <!-- HEADER -->
-  <section class="relative pt-44 pb-24 md:pt-56 md:pb-32 px-6 md:px-10 radial-wash border-b border-ink-700">
+  <section class="relative pt-44 pb-20 md:pt-56 md:pb-28 px-6 md:px-10 border-b border-warm-300">
     <div class="max-w-7xl mx-auto">
-      <div class="text-ink-300 text-[11px] uppercase tracking-[0.32em] mb-8 page-eyebrow">An archive of working outlines</div>
+      <div class="text-warm-500 text-[11px] uppercase tracking-[0.32em] mb-8 page-eyebrow">An archive of working outlines</div>
       <h1 class="display page-title" style="font-size: clamp(3.5rem, 11vw, 9rem);">Library.</h1>
-      <p class="mt-10 max-w-xl text-ink-300 text-lg leading-relaxed page-sub">
-        Each entry below is a complete, navigable outline — built from class notes, casebriefs, and statute.
+      <p class="mt-10 max-w-xl text-warm-600 text-lg leading-relaxed page-sub">
+        Each entry below is a complete, navigable outline &mdash; built from class notes, casebriefs, and statute.
       </p>
     </div>
   </section>
 
-  <!-- INDEX -->
   <section class="relative px-6 md:px-10 py-12">
     <div class="max-w-7xl mx-auto">
 
       <div class="flex items-baseline justify-between mb-12 mt-8">
         <h2 class="display text-3xl md:text-4xl">Available.</h2>
-        <span class="text-ink-300 text-[11px] uppercase tracking-[0.3em]">01 outline</span>
+        <span class="text-warm-500 text-[11px] uppercase tracking-[0.3em]">01 outline</span>
       </div>
 
-      <ul class="border-t border-ink-700">
-        <li class="row border-b border-ink-700">
+      <ul class="border-t border-warm-300">
+        <li class="row border-b border-warm-300">
           <a href="civproii/civil-procedure-ii.html" class="grid grid-cols-12 gap-4 items-baseline py-8 md:py-10 px-2 md:px-6">
-            <span class="col-span-1 tabular-nums text-ink-500 text-xs">01</span>
-            <span class="col-span-11 md:col-span-7 display text-3xl md:text-5xl text-ink-100">Civil Procedure&nbsp;II</span>
-            <span class="hidden md:inline col-span-2 text-xs uppercase tracking-[0.25em] text-ink-300">Spring 2026</span>
-            <span class="hidden md:flex col-span-2 justify-end items-center gap-3 text-sm text-ink-100">
+            <span class="col-span-1 tabular-nums text-warm-400 text-xs">01</span>
+            <span class="col-span-11 md:col-span-7 display text-3xl md:text-5xl">Civil Procedure&nbsp;II</span>
+            <span class="hidden md:inline col-span-2 text-xs uppercase tracking-[0.25em] text-warm-500">Spring 2026</span>
+            <span class="hidden md:flex col-span-2 justify-end items-center gap-3 text-sm text-warm-800">
               Open <span class="row-arrow">&rarr;</span>
             </span>
-            <span class="col-span-12 md:hidden mt-2 text-xs uppercase tracking-[0.25em] text-ink-300">Spring 2026</span>
+            <span class="col-span-12 md:hidden mt-2 text-xs uppercase tracking-[0.25em] text-warm-500">Spring 2026</span>
           </a>
         </li>
       </ul>
 
       <div class="mt-32 mb-12 flex items-baseline justify-between">
         <h2 class="display text-3xl md:text-4xl">In progress.</h2>
-        <span class="text-ink-300 text-[11px] uppercase tracking-[0.3em]">drafts &amp; future terms</span>
+        <span class="text-warm-500 text-[11px] uppercase tracking-[0.3em]">drafts &amp; future terms</span>
       </div>
 
-      <ul class="border-t border-ink-700">
-        <li class="grid grid-cols-12 gap-4 items-baseline py-7 px-2 md:px-6 border-b border-ink-700 text-ink-300">
-          <span class="col-span-1 tabular-nums text-ink-500 text-xs">02</span>
-          <span class="col-span-7 display text-2xl md:text-3xl text-ink-200">Contracts</span>
+      <ul class="border-t border-warm-300">
+        <li class="grid grid-cols-12 gap-4 items-baseline py-7 px-2 md:px-6 border-b border-warm-300 text-warm-600">
+          <span class="col-span-1 tabular-nums text-warm-400 text-xs">02</span>
+          <span class="col-span-7 display text-2xl md:text-3xl">Contracts</span>
           <span class="hidden md:inline col-span-2 text-xs uppercase tracking-[0.25em]">Spring 2026</span>
-          <span class="col-span-4 md:col-span-2 text-right text-xs uppercase tracking-[0.25em] text-ink-500">drafting</span>
+          <span class="col-span-4 md:col-span-2 text-right text-xs uppercase tracking-[0.25em] text-warm-400">drafting</span>
         </li>
-        <li class="grid grid-cols-12 gap-4 items-baseline py-7 px-2 md:px-6 border-b border-ink-700 text-ink-300">
-          <span class="col-span-1 tabular-nums text-ink-500 text-xs">03</span>
-          <span class="col-span-7 display text-2xl md:text-3xl text-ink-200">Constitutional Law</span>
+        <li class="grid grid-cols-12 gap-4 items-baseline py-7 px-2 md:px-6 border-b border-warm-300 text-warm-600">
+          <span class="col-span-1 tabular-nums text-warm-400 text-xs">03</span>
+          <span class="col-span-7 display text-2xl md:text-3xl">Constitutional Law</span>
           <span class="hidden md:inline col-span-2 text-xs uppercase tracking-[0.25em]">Spring 2026</span>
-          <span class="col-span-4 md:col-span-2 text-right text-xs uppercase tracking-[0.25em] text-ink-500">drafting</span>
+          <span class="col-span-4 md:col-span-2 text-right text-xs uppercase tracking-[0.25em] text-warm-400">drafting</span>
         </li>
-        <li class="grid grid-cols-12 gap-4 items-baseline py-7 px-2 md:px-6 border-b border-ink-700 text-ink-300">
-          <span class="col-span-1 tabular-nums text-ink-500 text-xs">04</span>
-          <span class="col-span-7 display text-2xl md:text-3xl text-ink-200">Criminal Law</span>
+        <li class="grid grid-cols-12 gap-4 items-baseline py-7 px-2 md:px-6 border-b border-warm-300 text-warm-600">
+          <span class="col-span-1 tabular-nums text-warm-400 text-xs">04</span>
+          <span class="col-span-7 display text-2xl md:text-3xl">Criminal Law</span>
           <span class="hidden md:inline col-span-2 text-xs uppercase tracking-[0.25em]">Spring 2026</span>
-          <span class="col-span-4 md:col-span-2 text-right text-xs uppercase tracking-[0.25em] text-ink-500">drafting</span>
+          <span class="col-span-4 md:col-span-2 text-right text-xs uppercase tracking-[0.25em] text-warm-400">drafting</span>
         </li>
-        <li class="grid grid-cols-12 gap-4 items-baseline py-7 px-2 md:px-6 border-b border-ink-700 text-ink-300">
-          <span class="col-span-1 tabular-nums text-ink-500 text-xs">05</span>
-          <span class="col-span-7 display text-2xl md:text-3xl text-ink-200">Income Tax</span>
+        <li class="grid grid-cols-12 gap-4 items-baseline py-7 px-2 md:px-6 border-b border-warm-300 text-warm-600">
+          <span class="col-span-1 tabular-nums text-warm-400 text-xs">05</span>
+          <span class="col-span-7 display text-2xl md:text-3xl">Income Tax</span>
           <span class="hidden md:inline col-span-2 text-xs uppercase tracking-[0.25em]">Fall 2026</span>
-          <span class="col-span-4 md:col-span-2 text-right text-xs uppercase tracking-[0.25em] text-ink-500">planned</span>
+          <span class="col-span-4 md:col-span-2 text-right text-xs uppercase tracking-[0.25em] text-warm-400">planned</span>
         </li>
-        <li class="grid grid-cols-12 gap-4 items-baseline py-7 px-2 md:px-6 border-b border-ink-700 text-ink-300">
-          <span class="col-span-1 tabular-nums text-ink-500 text-xs">06</span>
-          <span class="col-span-7 display text-2xl md:text-3xl text-ink-200">Oil &amp; Gas</span>
+        <li class="grid grid-cols-12 gap-4 items-baseline py-7 px-2 md:px-6 border-b border-warm-300 text-warm-600">
+          <span class="col-span-1 tabular-nums text-warm-400 text-xs">06</span>
+          <span class="col-span-7 display text-2xl md:text-3xl">Oil &amp; Gas</span>
           <span class="hidden md:inline col-span-2 text-xs uppercase tracking-[0.25em]">Fall 2026</span>
-          <span class="col-span-4 md:col-span-2 text-right text-xs uppercase tracking-[0.25em] text-ink-500">planned</span>
+          <span class="col-span-4 md:col-span-2 text-right text-xs uppercase tracking-[0.25em] text-warm-400">planned</span>
         </li>
-        <li class="grid grid-cols-12 gap-4 items-baseline py-7 px-2 md:px-6 border-b border-ink-700 text-ink-300">
-          <span class="col-span-1 tabular-nums text-ink-500 text-xs">07</span>
-          <span class="col-span-7 display text-2xl md:text-3xl text-ink-200">Sentencing &amp; Habeas Corpus</span>
+        <li class="grid grid-cols-12 gap-4 items-baseline py-7 px-2 md:px-6 border-b border-warm-300 text-warm-600">
+          <span class="col-span-1 tabular-nums text-warm-400 text-xs">07</span>
+          <span class="col-span-7 display text-2xl md:text-3xl">Sentencing &amp; Habeas Corpus</span>
           <span class="hidden md:inline col-span-2 text-xs uppercase tracking-[0.25em]">Fall 2026</span>
-          <span class="col-span-4 md:col-span-2 text-right text-xs uppercase tracking-[0.25em] text-ink-500">planned</span>
+          <span class="col-span-4 md:col-span-2 text-right text-xs uppercase tracking-[0.25em] text-warm-400">planned</span>
         </li>
-        <li class="grid grid-cols-12 gap-4 items-baseline py-7 px-2 md:px-6 border-b border-ink-700 text-ink-300">
-          <span class="col-span-1 tabular-nums text-ink-500 text-xs">08</span>
-          <span class="col-span-7 display text-2xl md:text-3xl text-ink-200">Secured Transactions</span>
+        <li class="grid grid-cols-12 gap-4 items-baseline py-7 px-2 md:px-6 border-b border-warm-300 text-warm-600">
+          <span class="col-span-1 tabular-nums text-warm-400 text-xs">08</span>
+          <span class="col-span-7 display text-2xl md:text-3xl">Secured Transactions</span>
           <span class="hidden md:inline col-span-2 text-xs uppercase tracking-[0.25em]">Fall 2026</span>
-          <span class="col-span-4 md:col-span-2 text-right text-xs uppercase tracking-[0.25em] text-ink-500">planned</span>
+          <span class="col-span-4 md:col-span-2 text-right text-xs uppercase tracking-[0.25em] text-warm-400">planned</span>
         </li>
-        <li class="grid grid-cols-12 gap-4 items-baseline py-7 px-2 md:px-6 border-b border-ink-700 text-ink-300">
-          <span class="col-span-1 tabular-nums text-ink-500 text-xs">09</span>
-          <span class="col-span-7 display text-2xl md:text-3xl text-ink-200">Statutory Interpretation</span>
+        <li class="grid grid-cols-12 gap-4 items-baseline py-7 px-2 md:px-6 border-b border-warm-300 text-warm-600">
+          <span class="col-span-1 tabular-nums text-warm-400 text-xs">09</span>
+          <span class="col-span-7 display text-2xl md:text-3xl">Statutory Interpretation</span>
           <span class="hidden md:inline col-span-2 text-xs uppercase tracking-[0.25em]">Fall 2026</span>
-          <span class="col-span-4 md:col-span-2 text-right text-xs uppercase tracking-[0.25em] text-ink-500">planned</span>
+          <span class="col-span-4 md:col-span-2 text-right text-xs uppercase tracking-[0.25em] text-warm-400">planned</span>
         </li>
       </ul>
 
       <div class="mt-24 mb-8 text-center">
-        <a href="../" class="inline-flex items-center gap-3 text-sm text-ink-300 link-u">
+        <a href="../" class="inline-flex items-center gap-3 text-sm text-warm-500 link-u">
           <span>&larr;</span> Back to home
         </a>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="px-6 md:px-10 pt-12 pb-14 border-t border-ink-700">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-baseline justify-between gap-6 text-sm text-ink-300">
+  <footer class="px-6 md:px-10 pt-12 pb-14 border-t border-warm-300">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-baseline justify-between gap-6 text-sm text-warm-600">
       <div>
-        <span class="text-ink-100">Mypenjustbroke</span> &mdash; outlines, since 2026.
+        <span class="text-warm-800 font-medium">Mypenjustbroke</span> &mdash; outlines, since 2026.
       </div>
       <div class="flex flex-wrap gap-x-10 gap-y-3">
         <a href="https://mypenjustbroke.com" class="link-u">mypenjustbroke.com</a>
