@@ -1,1 +1,8 @@
 .DS_Store
+archives/_titles.txt
+archives/chunk_*.txt
+archives/_bodies_*
+archives/_chunk*_data.py
+archives/_convert.py
+archives/_one.py
+archives/__pycache__/
